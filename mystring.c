@@ -32,6 +32,20 @@ char * mystrncat(char *dest, char *source, int n){
     return dest;
 }
 
+int mystrcmp( char *s1, char *s2 ){
+    while (*s1 && *s2)
+    {
+        if (*s1 != *s2){
+            if (*s1 > *s2){
+                return 1;
+            }else{
+                return -1;
+            }
+        }
+    }
+    return 0;
+}
+
 char * mystrchr(char *s, char c){
     while (*s){
         if (*s == c){
