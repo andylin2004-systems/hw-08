@@ -1,5 +1,5 @@
 all: main.o mystring.o
-	gcc -o euler main.o mystring.o
+	gcc -o mystring main.o mystring.o
 
 main.o: main.c mystring.h
 	gcc -c main.c

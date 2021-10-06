@@ -28,7 +28,7 @@ char * mystrncat(char *dest, char *source, int n){
         source++;
         i++;
     }
-    dest = '\0';
+    *dest = '\0';
     return dest;
 }
 
@@ -51,6 +51,7 @@ char * mystrchr(char *s, char c){
         if (*s == c){
             return s;
         }
+        s++;
     }
     return NULL;
 }
