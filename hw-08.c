@@ -2,7 +2,7 @@
 
 int mystrlen(char *s){
     int result = 0;
-    while (s){
+    while (*s){
         result++;
         s++;
     }
@@ -10,8 +10,8 @@ int mystrlen(char *s){
 }
 
 char * mystrcpy(char *dest, char *source){
-    while (source){
-        dest = source;
+    while (*source){
+        *dest = *source;
         dest++;
         source++;
     }
@@ -21,7 +21,7 @@ char * mystrcpy(char *dest, char *source){
 char * mystrncat(char *dest, char *source, int n){
     int i = 0;
     dest += mystrlen(dest);
-    while (source && i<n-1)
+    while (*source && i<n-1)
     {
         dest = source;
         dest++;
@@ -30,4 +30,13 @@ char * mystrncat(char *dest, char *source, int n){
     }
     dest = '\0';
     return dest;
+}
+
+char * mystrchr(char *s, char c){
+    while (*s){
+        if (*s == c){
+            return s;
+        }
+    }
+    return NULL;
 }
