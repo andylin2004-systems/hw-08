@@ -10,12 +10,14 @@ int mystrlen(char *s){
 }
 
 char * mystrcpy(char *dest, char *source){
-    while (*source){
+    char *destInital = dest;
+    while (*source)
+    {
         *dest = *source;
         dest++;
         source++;
     }
-    return *dest;
+    return destInital;
 }
 
 char * mystrncat(char *dest, char *source, int n){
