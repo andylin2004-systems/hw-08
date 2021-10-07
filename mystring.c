@@ -17,21 +17,23 @@ char * mystrcpy(char *dest, char *source){
         dest++;
         source++;
     }
+    *dest = '\0';
     return destInital;
 }
 
 char * mystrncat(char *dest, char *source, int n){
     int i = 0;
+    char *destInital = dest;
     dest += mystrlen(dest);
-    while (*source && i<n-1)
+    while (*source && i<n)
     {
-        dest = source;
+        *dest = *source;
         dest++;
         source++;
         i++;
     }
     *dest = '\0';
-    return dest;
+    return destInital;
 }
 
 int mystrcmp( char *s1, char *s2 ){
